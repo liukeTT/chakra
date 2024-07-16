@@ -23,7 +23,7 @@ Repository = "https://github.com/mlcommons/chakra.git"
 "chakra.et_converter" = "et_converter"
 "chakra.et_visualizer" = "et_visualizer"
 "chakra.timeline_visualizer" = "timeline_visualizer"
-"chakra.et_generator" = "utils/et_generator"
+"chakra.et_generator" = "et_generator"
 "chakra.et_jsonizer" = "utils/et_jsonizer"
 "chakra.third_party.utils" = "third_party/utils"
 

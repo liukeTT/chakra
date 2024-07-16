@@ -1,0 +1,32 @@
+# Ubuntu
+FROM ubuntu:20.04
+
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Installation/Basic Utilities
+RUN apt-get update && \
+        apt-get install -y --no-install-recommends \
+        software-properties-common build-essential autotools-dev \
+        nfs-common pdsh \
+        cmake g++ gcc \
+        curl wget vim tmux emacs less unzip tar \
+        htop iftop iotop ca-certificates openssh-client openssh-server \
+        rsync iputils-ping net-tools sudo \
+        llvm-dev
+
+# Install dependencies
+RUN apt -y update
+RUN apt -y upgrade
+RUN apt -y install \
+    tcsh vim gcc g++ make cmake \
+    libboost-dev libboost-program-options-dev \
+    libprotobuf-dev protobuf-compiler \
+    python3 python3-pip git
+
+# Install python dependencies
+RUN pip3 install --upgrade pip
+RUN pip3 install protobuf==3.6.1 pydot
+
+# Install plot dependencies
+RUN pip3 install numpy matplotlib scipy
